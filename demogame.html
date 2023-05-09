@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Memory Game</title>
+  </head>
+  <body>
+    <h1>Number Array</h1>
+    <p>Enter a number and click the "Add" button:</p>
+    <input type="text" id="numberInput">
+    <button id="addButton">Add</button>
+    <p id="errorMessage"></p>
+    <p>The current numbers in the array are:</p>
+    <ul id="numberList"></ul>
+    <audio id="errorSound" src="error.mp3"></audio>
+    <script>
+      const numberList = [];
+      const numberInput = document.getElementById('numberInput');
+      const addButton = document.getElementById('addButton');
+      const errorMessage = document.getElementById('errorMessage');
+      const numberListElement = document.getElementById('numberList');
+      const errorSound = document.getElementById('errorSound');
+      
+      addButton.addEventListener('click', () => {
+        const number = parseInt(numberInput.value);
+        if (isNaN(number)) {
+          errorMessage.textContent = 'Please enter a valid number.';
+          errorSound.play();
+        } else if (numberList.includes(number)) {
+          errorMessage.textContent = 'This number is already in the array.';
+          errorSound.play();
+        } else {
+          numberList.push(number);
+          const listItem = document.createElement('li');
+          listItem.textContent = number;
+          numberListElement.appendChild(listItem);
+          errorMessage.textContent = '';
+        }
+      });
+    </script>
+  </body>
+</html>

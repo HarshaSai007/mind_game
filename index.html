@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Number Game</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+
+	<h1>Number Game</h1>
+	<p>Enter a number between 1 and 100:</p>
+	<input type="number" id="user-input">
+	<button onclick="checkNumber()">Check</button>
+	<p id="output"></p>
+
+    <table>
+
+
+  <tbody id="table-body">
+    <tr>
+        <td onclick="addNumberToTable(1)"></td>
+        <td onclick="addNumberToTable(2)"></td>
+        <td onclick="addNumberToTable(3)"></td>
+        <td onclick="addNumberToTable(4)"></td>
+        <td onclick="addNumberToTable(5)"></td>
+        <td onclick="addNumberToTable(6)"></td>
+        <td onclick="addNumberToTable(7)"></td>
+        <td onclick="addNumberToTable(8)"></td>
+        <td onclick="addNumberToTable(9)"></td>
+        <td onclick="addNumberToTable(10)"></td>
+    </tr>
+    <tr>
+        <td onclick="addNumberToTable(11)"></td>
+        <td onclick="addNumberToTable(12)"></td>
+        <td onclick="addNumberToTable(13)"></td>
+        <td onclick="addNumberToTable(14)"></td>
+        <td onclick="addNumberToTable(15)"></td>
+        <td onclick="addNumberToTable(16)"></td>
+        <td onclick="addNumberToTable(17)"></td>
+        <td onclick="addNumberToTable(18)"></td>
+        <td onclick="addNumberToTable(19)"></td>
+        <td onclick="addNumberToTable(20)"></td>
+    </tr>
+    <tr>
+        <td onclick="addNumberToTable(21)"></td>
+        <td onclick="addNumberToTable(22)"></td>
+        <td onclick="addNumberToTable(23)"></td>
+        <td onclick="addNumberToTable(24)"></td>
+        <td onclick="addNumberToTable(25)"></td>
+        <td onclick="addNumberToTable(26)"></td>
+        <td onclick="addNumberToTable(27)"></td>
+        <td onclick="addNumberToTable(28)"></td>
+        <td onclick="addNumberToTable(29)"></td>
+        <td onclick="addNumberToTable(30)"></td>
+    </tr>
+    <tr>
+        <td onclick="addNumberToTable(31)"></td>
+        <td onclick="addNumberToTable(32)"></td>
+        <td onclick="addNumberToTable(33)"></td>
+        <td onclick="addNumberToTable(34)"></td>
+        <td onclick="addNumberToTable(35)"></td>
+        <td onclick="addNumberToTable(36)"></td>
+        <td onclick="addNumberToTable(37)"></td>
+        <td onclick="addNumberToTable(38)"></td>
+        <td onclick="addNumberToTable(39)"></td>
+        <td onclick="addNumberToTable(40)"></td>
+    </tr>
+    <tr>
+        <td onclick="addNumberToTable(41)"></td>
+        <td onclick="addNumberToTable(42)"></td>
+        <td onclick="addNumberToTable(43)"></td>
+        <td onclick="addNumberToTable(44)"></td>
+        <td onclick="addNumberToTable(45)"></td>
+        <td onclick="addNumberToTable(46)"></td>
+        <td onclick="addNumberToTable(47)"></td>
+        <td onclick="addNumberToTable(48)"></td>
+        <td onclick="addNumberToTable(49)"></td>
+        <td onclick="addNumberToTable(50)"></td>
+    </tr>
+    <tr>
+        <td onclick="addNumberToTable(51)"></td>
+        <td onclick="addNumberToTable(52)"></td>
+        <td onclick="addNumberToTable(53)"></td>
+        <td onclick="addNumberToTable(54)"></td>
+        <td onclick="addNumberToTable(55)"></td>
+        <td onclick="addNumberToTable(56)"></td>
+        <td onclick="addNumberToTable(57)"></td>
+        <td onclick="addNumberToTable(58)"></td>
+        <td onclick="addNumberToTable(59)"></td>
+        <td onclick="addNumberToTable(60)"></td>
+    </tr>
+    <tr>
+        <td onclick="addNumberToTable(61)"></td>
+        <td onclick="addNumberToTable(62)"></td>
+        <td onclick="addNumberToTable(63)"></td>
+        <td onclick="addNumberToTable(64)"></td>
+        <td onclick="addNumberToTable(65)"></td>
+        <td onclick="addNumberToTable(66)"></td>
+        <td onclick="addNumberToTable(67)"></td>
+        <td onclick="addNumberToTable(68)"></td>
+        <td onclick="addNumberToTable(69)"></td>
+        <td onclick="addNumberToTable(70)"></td>
+    </tr>
+    <tr>
+        <td onclick="addNumberToTable(71)"></td>
+        <td onclick="addNumberToTable(72)"></td>
+        <td onclick="addNumberToTable(73)"></td>
+        <td onclick="addNumberToTable(74)"></td>
+        <td onclick="addNumberToTable(75)"></td>
+        <td onclick="addNumberToTable(76)"></td>
+        <td onclick="addNumberToTable(77)"></td>
+        <td onclick="addNumberToTable(78)"></td>
+        <td onclick="addNumberToTable(79)"></td>
+        <td onclick="addNumberToTable(80)"></td>
+    </tr>
+    <tr>
+        <td onclick="addNumberToTable(81)"></td>
+        <td onclick="addNumberToTable(82)"></td>
+        <td onclick="addNumberToTable(83)"></td>
+        <td onclick="addNumberToTable(84)"></td>
+        <td onclick="addNumberToTable(85)"></td>
+        <td onclick="addNumberToTable(86)"></td>
+        <td onclick="addNumberToTable(87)"></td>
+        <td onclick="addNumberToTable(88)"></td>
+        <td onclick="addNumberToTable(89)"></td>
+        <td onclick="addNumberToTable(90)"></td>
+    </tr>
+    <tr>
+        <td onclick="addNumberToTable(91)"></td>
+        <td onclick="addNumberToTable(92)"></td>
+        <td onclick="addNumberToTable(93)"></td>
+        <td onclick="addNumberToTable(94)"></td>
+        <td onclick="addNumberToTable(95)"></td>
+        <td onclick="addNumberToTable(96)"></td>
+        <td onclick="addNumberToTable(97)"></td>
+        <td onclick="addNumberToTable(98)"></td>
+        <td onclick="addNumberToTable(99)"></td>
+        <td onclick="addNumberToTable(100)"></td>
+    </tr>
+  </tbody>
+ </table>
+
+	<script>
+		let numberArray = [];
+const tableCells = document.querySelectorAll('#table-body td');
+
+function checkNumber() {
+    const inputNumber = parseInt(document.getElementById('user-input').value);
+
+    if (isNaN(inputNumber) || inputNumber < 1 || inputNumber > 100) {
+        document.getElementById('output').textContent = 'Invalid input. Please enter a number between 1 and 100.';
+    } else if (numberArray.includes(inputNumber)) {
+        document.getElementById('output').textContent = 'Number already added to array.';
+        playErrorSound();
+    } else if (checkConstraints(inputNumber)) {
+        document.getElementById('output').textContent = 'Number violates constraint. Cannot be added to array.';
+        playErrorSound();
+    } else {
+        numberArray.push(inputNumber);
+        document.getElementById('output').textContent = 'Number added to array.';
+    }
+
+    document.getElementById('user-input').value = '';
+    updateTable();
+}
+
+function checkConstraints(number) {
+    if (numberArray.length < 2) {
+        return false;
+    }
+
+    const lastNumber = numberArray[numberArray.length - 1];
+    const secondLastNumber = numberArray[numberArray.length - 2];
+
+    if (lastNumber === secondLastNumber) {
+        return true;
+    }
+
+    if (number - lastNumber === 1 && lastNumber - secondLastNumber === 1) {
+        return true;
+    }
+
+    if (number % 2 === 0 && lastNumber % 2 === 0 && secondLastNumber % 2 === 0) {
+        return true;
+    }
+
+    if (number % 2 === 1 && lastNumber % 2 === 1 && secondLastNumber % 2 === 1) {
+        return true;
+    }
+
+    if (isPrime(number) && isPrime(lastNumber) && isPrime(secondLastNumber)) {
+        return true;
+    }
+
+    return false;
+}
+
+function isPrime(number) {
+    if (number < 2) {
+        return false;
+    }
+
+    for (let i = 2; i <= Math.sqrt(number); i++) {
+        if (number % i === 0) {
+            return false;
+        }
+    }
+
+    return true;
+}
+
+function addNumberToTable(number) {
+    if (numberArray.includes(number)) {
+        return;
+    }
+    numberArray.push(number);
+    updateTable();
+}
+
+function updateTable() {
+    for (let i = 0; i < tableCells.length; i++) {
+        if (numberArray[i]) {
+            tableCells[i].textContent = numberArray[i];
+        } else {
+            tableCells[i].textContent = '';
+        }
+    }
+}
+
+updateTable();
+
+function playErrorSound() {
+			const audio = new Audio("error.mp3");
+			audio.play();
+		}
+
+
+
+        
+
+	</script>
+</body>
+</html>
